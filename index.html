@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASEAN Energy Library</title>
+    <style>
+        /* CSS for Styling and Responsiveness */
+        :root {
+            --primary-color: #0056b3;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #searchInput:focus {
+            border-color: var(--primary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.25rem;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 10px;
+        }
+
+        .card p, .card ul {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .cite {
+            font-size: 0.8rem;
+            color: #888;
+            font-weight: bold;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ASEAN Energy Library</h1>
+        <p>Research Findings on Bioenergy & Sustainable Power</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for biomass, hydrogen, policies, etc..." onkeyup="filterCards()">
+    </div>
+
+    <div class="container" id="libraryContainer">
+        
+        <div class="card" data-tags="malaysia biomass agriculture palm oil waste">
+            <h2>Malaysia's Agricultural Biomass</h2>
+            <p>In 2022, Malaysia generated 182.6 million tonnes of total biomass <span class="cite">[cite: 7, 43]</span>. The vast majority comes from plantation biomass, which accounts for 164 million tonnes <span class="cite">[cite: 42]</span>. The palm oil industry contributes roughly 94% of this total <span class="cite">[cite: 59]</span>. Instead of environmentally harmful disposal methods like open burning, converting this agricultural waste to energy offers a pathway to a circular economy <span class="cite">[cite: 4, 5]</span>.</p>
+        </div>
+
+        <div class="card" data-tags="processes technology direct combustion anaerobic digestion gasification pyrolysis">
+            <h2>Waste-to-Energy Processes</h2>
+            <p>Agricultural biomass is converted into energy through four main technological pathways <span class="cite">[cite: 46]</span>:</p>
+            <ul>
+                <li><strong>Direct Combustion:</strong> Biomass is burned to produce high-pressure steam, which drives a turbine to generate electricity <span class="cite">[cite: 47]</span>.</li>
+                <li><strong>Anaerobic Digestion:</strong> Microorganisms break down organic waste in the absence of oxygen to produce biogas (methane and CO2) <span class="cite">[cite: 48]</span>.</li>
+                <li><strong>Gasification & Pyrolysis:</strong> Thermochemical processes that convert biomass into syngas, bio-oil, and biochar using high temperatures <span class="cite">[cite: 49, 50]</span>.</li>
+                <li><strong>Torrefaction & Pelletization:</strong> Physical and mild heat treatments that increase energy density, turning biomass into wood pellets <span class="cite">[cite: 52]</span>.</li>
+            </ul>
+        </div>
+
+        <div class="card" data-tags="asean laws policies malaysia singapore fit renewable energy">
+            <h2>ASEAN Biomass Policies</h2>
+            <p>Across ASEAN, national laws and strategies are evolving to harness the potential of biomass <span class="cite">[cite: 56]</span>. Key examples include:</p>
+            <ul>
+                <li><strong>Malaysia:</strong> Governed by the Renewable Energy Act 2011 and managed by a Feed-in Tariff (FiT) mechanism that allows producers to sell electricity to the national grid <span class="cite">[cite: 54, 61]</span>. As of 2020, Malaysia reached approximately 211 MW of installed biomass power capacity <span class="cite">[cite: 60]</span>.</li>
+                <li><strong>Singapore:</strong> Focuses primarily on R&D through the Sustainable Singapore Blueprint, as there is no specific biomass law <span class="cite">[cite: 54]</span>.</li>
+            </ul>
+        </div>
+
+        <div class="card" data-tags="singapore sembcorp hydrogen power plant combined cycle mitsubishi">
+            <h2>Sembcorp Hydrogen-Ready Plant</h2>
+            <p>A new 600MW hydrogen-ready combined cycle power plant (CCPP) is being developed for Sembcorp in Singapore, expected to be operational by 2026 <span class="cite">[cite: 74]</span>. It utilizes the Mitsubishi Power M701JAC gas turbine <span class="cite">[cite: 76]</span>. Because it simultaneously produces steam for industrial processes, the plant achieves an efficiency of over 60% <span class="cite">[cite: 77, 87]</span>.</p>
+        </div>
+
+        <div class="card" data-tags="hydrogen phases future implementation sembcorp">
+            <h2>Hydrogen Blending Implementation</h2>
+            <p>The Sembcorp plant does not run on 100% hydrogen initially <span class="cite">[cite: 79]</span>. During Phase 1, it runs primarily on Natural Gas but is capable of burning a blend of 30% Hydrogen by volume with zero hardware modifications <span class="cite">[cite: 80]</span>. In Phase 2, the turbine is designed to be retrofitted to burn 100% Hydrogen once the regional supply chain becomes commercially viable <span class="cite">[cite: 81]</span>. This is estimated to save about 220,000 tonnes of CO2 per year compared to older technology <span class="cite">[cite: 89]</span>.</p>
+        </div>
+
+        <div class="card" data-tags="environment impact biodiversity carbon neutrality circular economy mspo">
+            <h2>Environmental Impacts of Biomass</h2>
+            <p>Biomass energy has notable environmental implications:</p>
+            <ul>
+                <li><strong>Positive:</strong> It promotes carbon neutrality, improves air quality by eliminating open-field burning, and supports a circular economy by transforming disposal problems into resources <span class="cite">[cite: 65]</span>.</li>
+                <li><strong>Risks:</strong> Potential loss of biodiversity and habitat if land is cleared for new "energy crops" <span class="cite">[cite: 65]</span>. In Malaysia, this is mitigated by MSPO certification to ensure biomass does not come from deforested areas <span class="cite">[cite: 66]</span>.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function filterCards() {
+            // Get the user's search input and convert to lowercase
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            // Get all the cards in the library
+            const cards = document.querySelectorAll('.card');
+
+            // Loop through all cards
+            cards.forEach(card => {
+                // Read the hidden search tags and the visible text content of the card
+                const tags = card.getAttribute('data-tags').toLowerCase();
+                const textContent = card.innerText.toLowerCase();
+
+                // If the input matches either the tags or the visible text, display it
+                if (tags.includes(input) || textContent.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
